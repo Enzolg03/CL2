@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Curso</title>
+</head>
+<body>
+    <nav th:replace="~{layout::menu}"></nav>
+    <h1>Cursos</h1>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nombre Curso</th>
+                <th scope="col">Crédito</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="curso:${listado}">
+                <th scope="row" th:text="${curso.idcurso}"></th>
+                <td th:text="${curso.nomcurso}"></td>
+                <td th:text="${curso.credito}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
